@@ -1098,6 +1098,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@expo-google-fonts/balsamiq-sans@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/balsamiq-sans/-/balsamiq-sans-0.1.0.tgz#411d71bc300c6f6b6bd07c93196a73e876fe7a38"
+  integrity sha512-emyTlcZH9naaHVogOtC1TLQDSlnFnqSEgXGgb3lZW3+T1+4apUXWnCSdwZFJ4dwIHLEyv0X/HXk4ll0iNcFrkw==
+
 "@expo-google-fonts/lato@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/lato/-/lato-0.1.0.tgz#c0b62ebb883adf41f3e02bd76959914afc7d5d87"

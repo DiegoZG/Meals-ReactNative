@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .js"
   },
   "dependencies": {
+    "@expo-google-fonts/balsamiq-sans": "^0.1.0",
     "@expo-google-fonts/lato": "^0.1.0",
     "@expo-google-fonts/oswald": "^0.1.0",
     "@expo-google-fonts/source-sans-pro": "^0.1.0",

@@ -9,7 +9,13 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import {
   useFonts as useSource,
   SourceSansPro_400Regular,
+  SourceSansPro_400Bold_Italic,
 } from "@expo-google-fonts/source-sans-pro";
+
+import {
+  useFonts as useBalsamiq,
+  BalsamiqSans_400Regular,
+} from "@expo-google-fonts/balsamiq-sans";
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 
@@ -22,8 +28,16 @@ export default function App() {
   });
 
   const [sourceLoaded] = useSource({
-    SourceSansPro_400Regular,
+    SourceSansPro_400Bold_Italic,
   });
+
+  const [balsamiqLoaded] = useBalsamiq({
+    BalsamiqSans_400Regular,
+  });
+
+  if (!oswaldLoaded || !latoLoaded || !sourceLoaded || !balsamiqLoaded) {
+    return null;
+  }
 
   return (
     <>

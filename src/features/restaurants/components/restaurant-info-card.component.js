@@ -15,6 +15,7 @@ const Title = styled.Text`
   padding: ${(props) => props.theme.space[3]};
   color: ${(props) => props.theme.colors.ui.primary};
   font-family: ${(props) => props.theme.fonts.source};
+  font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
