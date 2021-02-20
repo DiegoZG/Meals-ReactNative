@@ -2,7 +2,7 @@ export const fonts = {
   body: "Oswald_400Regular",
   heading: "Lato_400Regular",
   monospace: "Oswald_400Regular",
-  source: "SourceSansPro_400Bold_Italic",
+  source: "SourceSansPro_400Regular_Italic",
   balsamiq: "BalsamiqSan_400Regular",
 };
 

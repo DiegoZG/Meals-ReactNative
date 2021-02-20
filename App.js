@@ -9,7 +9,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import {
   useFonts as useSource,
   SourceSansPro_400Regular,
-  SourceSansPro_400Bold_Italic,
+  SourceSansPro_400Regular_Italic,
 } from "@expo-google-fonts/source-sans-pro";
 
 import {
@@ -28,7 +28,7 @@ export default function App() {
   });
 
   const [sourceLoaded] = useSource({
-    SourceSansPro_400Bold_Italic,
+    SourceSansPro_400Regular_Italic,
   });
 
   const [balsamiqLoaded] = useBalsamiq({
