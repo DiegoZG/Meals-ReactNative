@@ -25,7 +25,7 @@ const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
     padding: 16,
   },
-});
+})``;
 
 export const RestaurantsScreen = () => {
   return (
@@ -33,7 +33,7 @@ export const RestaurantsScreen = () => {
       <SearchContainer>
         <Searchbar />
       </SearchContainer>
-      <FlatList
+      <RestaurantList
         data={[
           { name: 1 },
           { name: 2 },
@@ -52,7 +52,7 @@ export const RestaurantsScreen = () => {
           </Spacer>
         )}
         keyExtractor={(item) => item.name}
-        contentContainerStyle={{ padding: 16 }} // padding 0 will put cards right next to the edges
+        // contentContainerStyle={{ padding: 16 }}  padding 0 will put cards right next to the edges
       />
     </SafeArea>
   );
