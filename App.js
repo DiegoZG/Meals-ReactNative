@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeArea } from "./src/components/utility/safe-area.component";
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Foundation } from "@expo/vector-icons";
 import {
