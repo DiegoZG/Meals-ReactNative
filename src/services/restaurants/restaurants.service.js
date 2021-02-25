@@ -6,7 +6,14 @@ export const restaurantRequest = (location = "37.7749295,-122.4194155") => {
     if (!mock) {
       reject("not found");
     }
+    resolve(mock);
   });
 };
 
-restaurantRequest();
+restaurantRequest()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log("error");
+  });
