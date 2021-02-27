@@ -11,9 +11,6 @@ import {
   RestaurantsContext,
   RestaurantsContextProvider,
 } from "../../../services/restaurants/restaurants.context";
-const SearchContainer = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-`;
 
 const ListContainer = styled.View`
   flex: 1;
@@ -46,13 +43,10 @@ export const RestaurantsScreen = () => {
           <Loading size={"large"} animating={true} color={Colors.blue800} />
         </LoadingContainer>
       )}
-      <SearchContainer>
-        <Searchbar />
-      </SearchContainer>
+      <Search />
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
-          console.log(item);
           return (
             <Spacer position="bottom" size="large">
               <RestaurantInfoCard restaurant={item} />
