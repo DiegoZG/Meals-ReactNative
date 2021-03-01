@@ -12,6 +12,30 @@ export const RestaurantDetailScreen = ({ route }) => {
   return (
     <SafeArea>
       <RestaurantInfoCard restaurant={restaurant} />
+      <List.Accordion
+        title="Breakfast"
+        left={(props) => <List.Icon {...props} icon="bread-slice" />}
+        expanded={breakfastExpanded}
+        onPress={() => setBreakfastExpanded(!breakfastExpanded)}
+      ></List.Accordion>
+      <List.Accordion
+        title="Lunch"
+        left={(props) => <List.Icon {...props} icon="hamburger" />}
+        expanded={lunchExpanded}
+        onPress={() => setBreakfastExpanded(!lunchExpanded)}
+      ></List.Accordion>
+      <List.Accordion
+        title="Dinner"
+        left={(props) => <List.Icon {...props} icon="food-variant" />}
+        expanded={dinnerExpanded}
+        onPress={() => setBreakfastExpanded(!dinnerExpanded)}
+      ></List.Accordion>
+      <List.Accordion
+        title="Drinks"
+        left={(props) => <List.Icon {...props} icon="cup" />}
+        expanded={dinnerExpanded}
+        onPress={() => setBreakfastExpanded(!dinnerExpanded)}
+      ></List.Accordion>
     </SafeArea>
   );
 };
