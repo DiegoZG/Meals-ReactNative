@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { restaurantsRequest } from "../../services/restaurants/restaurants.service";
+import WebView from "react-native-webview";
 import { Text } from "../typography/text.component";
 
 const CompactImage = styled.Image`
