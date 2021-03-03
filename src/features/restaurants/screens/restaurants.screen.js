@@ -3,6 +3,7 @@ import { FlatList, TouchableOpacity } from "react-native";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import styled from "styled-components/native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
 import { List } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -35,6 +36,7 @@ const LoadingContainer = styled.View`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
+
   const [isToggled, setIsToggled] = useState(false);
 
   const { favorites } = useContext(FavoritesContext);
@@ -47,9 +49,12 @@ export const RestaurantsScreen = ({ navigation }) => {
         </LoadingContainer>
       )}
       <Search
-        isFavoriteToggled={isToggled}
-        onToggle={() => setIsToggled(!isToggled)}
+        isFavoritesToggled={isToggled}
+        onFavoritesToggle={() => setIsToggled(!isToggled)}
       />
+      {isToggled && (
+        <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />
+      )}
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
