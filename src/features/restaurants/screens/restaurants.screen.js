@@ -8,10 +8,8 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Search } from "../components/search.component";
-import {
-  RestaurantsContext,
-  RestaurantsContextProvider,
-} from "../../../services/restaurants/restaurants.context";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
 
 const ListContainer = styled.View`
   flex: 1;
@@ -37,6 +35,8 @@ const LoadingContainer = styled.View`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  const { favorites } = useContext(FavoritesContext);
+  console.log(favorites);
   return (
     <SafeArea>
       {isLoading && (
