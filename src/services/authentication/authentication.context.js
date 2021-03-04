@@ -1,7 +1,9 @@
 import React, { useState, createContext } from "react";
 import * as firebase from "firebase";
+
 import { loginRequest } from "./authentication.service";
-export const AutheticationContext = createContext();
+
+export const AuthenticationContext = createContext();
 
 export const AuthenticationContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,8 +22,9 @@ export const AuthenticationContextProvider = ({ children }) => {
         setError(e);
       });
   };
+
   return (
-    <AuthenticationContextProvider
+    <AuthenticationContext.Provider
       value={{
         user,
         isLoading,
@@ -30,6 +33,6 @@ export const AuthenticationContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </AuthenticationContextProvider>
+    </AuthenticationContext.Provider>
   );
 };

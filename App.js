@@ -8,7 +8,7 @@ import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
-
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import { Foundation } from "@expo/vector-icons";
 import {
   useFonts as useOswald,
@@ -27,7 +27,6 @@ import {
 } from "@expo-google-fonts/balsamiq-sans";
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
-import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDDDm7eUQqENrqE7EXhN2pKCyeOcaRmIP8",
@@ -42,20 +41,6 @@ if (!firebase.apps.length) {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword("diego@binni.io", "123456")
-        .then((user) => {
-          setIsAuthenticated(true);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }, 2000);
-  }, []);
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
