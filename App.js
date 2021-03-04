@@ -3,7 +3,7 @@ import React from "react";
 import { Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { Navigation } from "./src/infrastructure/navigation";
-
+import * as firebase from "firebase";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
@@ -27,6 +27,17 @@ import {
 } from "@expo-google-fonts/balsamiq-sans";
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDDDm7eUQqENrqE7EXhN2pKCyeOcaRmIP8",
+  authDomain: "meals-1d8e6.firebaseapp.com",
+  projectId: "meals-1d8e6",
+  storageBucket: "meals-1d8e6.appspot.com",
+  messagingSenderId: "424534248196",
+  appId: "1:424534248196:web:56bc21778b82f9ee839e51",
+};
+
+firebase.initializeApp(firebaseConfig);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
