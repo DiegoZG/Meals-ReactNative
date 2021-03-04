@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { Navigation } from "./src/infrastructure/navigation";
@@ -36,10 +36,25 @@ const firebaseConfig = {
   messagingSenderId: "424534248196",
   appId: "1:424534248196:web:56bc21778b82f9ee839e51",
 };
-
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword("diego@binni.io", "123456")
+        .then((user) => {
+          setIsAuthenticated(true);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }, 2000);
+  }, []);
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -58,6 +73,8 @@ export default function App() {
   if (!oswaldLoaded || !latoLoaded || !sourceLoaded || !balsamiqLoaded) {
     return null;
   }
+
+  if (!isAuthenticated) return null;
 
   return (
     <>
