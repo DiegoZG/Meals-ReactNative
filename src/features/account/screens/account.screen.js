@@ -18,7 +18,7 @@ export const AccountScreen = ({ navigation }) => {
           mode="contained"
           onPress={() => navigation.navigate("Login")}
         >
-          Press Me
+          Login
         </AuthButton>
         <Spacer size="large">
           <AuthButton
