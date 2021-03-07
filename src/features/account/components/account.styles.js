@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Text } from "react-native";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Button, TextInput } from "react-native-paper";
 export const AccountBackground = styled.ImageBackground.attrs({
@@ -31,4 +32,8 @@ export const AuthButton = styled(Button).attrs({
 
 export const AuthInput = styled(TextInput)`
   width: 300px;
+`;
+
+export const Title = styled(Text)`
+  font-size: 35px;
 `;
