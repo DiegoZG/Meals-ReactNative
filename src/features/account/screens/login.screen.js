@@ -14,5 +14,30 @@ export const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const { onLogin } = useContext(AuthenticationContext);
 
-  return <AccountBackground />;
+  return (
+    <AccountBackground>
+      <AccountCover />
+      <AccountContainer>
+        <AuthInput
+          label="Email"
+          value={email}
+          textContentType="emailAddress"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          onChangeText={(u) => setEmail(u)}
+        />
+        <Spacer size="large">
+          <AuthInput
+            label="password"
+            value={password}
+            textContentType="password"
+            secureTextEntry
+            autoCapitalize="none"
+            secure
+            onChangeText={(p) => setPassword(p)}
+          />
+        </Spacer>
+      </AccountContainer>
+    </AccountBackground>
+  );
 };
