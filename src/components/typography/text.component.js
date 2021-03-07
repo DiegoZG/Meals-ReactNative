@@ -8,6 +8,14 @@ const defaultTextStyles = (theme) => `
   margin-top: 0px;
   margin-bottom: 0px;
 `;
+const defaultTextoStyles = (theme) => `
+  font-family: ${theme.fonts.source};
+  font-weight: ${theme.fontWeights.regular};
+  color: white;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+`;
 
 const body = (theme) => `
     font-size: ${theme.fontSizes.body};
@@ -46,5 +54,14 @@ export const Text = styled.Text`
 `;
 
 Text.defaultProps = {
+  variant: "body",
+};
+
+export const Texto = styled.Text`
+  ${({ theme }) => defaultTextoStyles(theme)}
+  ${({ variant, theme }) => variants[variant](theme)}
+`;
+
+Texto.defaultProps = {
   variant: "body",
 };
