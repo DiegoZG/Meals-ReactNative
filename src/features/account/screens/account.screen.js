@@ -20,7 +20,7 @@ export const AccountScreen = ({ navigation }) => {
           autoPlay
           loop
           resizeMode="cover"
-          source={require("../../../../assets/hamburger2.json")}
+          source={require("../../../../assets/hamburger.json")}
         />
       </AnimationWrapper>
       <Title> Munch Eats </Title>
