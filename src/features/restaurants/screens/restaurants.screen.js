@@ -11,18 +11,13 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Search } from "../components/search.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
+import { RestaurantList } from "../components/restaurant-list.styles";
 
 const ListContainer = styled.View`
   flex: 1;
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   padding: ${(props) => props.theme.sizes[1]};
 `;
-
-const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
-})``;
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
