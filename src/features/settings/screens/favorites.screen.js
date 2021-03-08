@@ -10,7 +10,7 @@ import { TouchableOpacity } from "react-native";
 
 const NoFavoritesArea = styled(SafeArea)`
   align-items: center;
-  justifycontent: center;
+  justify-content: center;
 `;
 
 export const FavoritesScreen = ({ navigation }) => {
