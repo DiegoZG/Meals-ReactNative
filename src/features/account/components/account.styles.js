@@ -47,9 +47,9 @@ export const ErrorContainer = styled.View`
 `;
 
 export const AnimationWrapper = styled.View`
-  width: 75%;
-  height: 30%;
+  width: 35%;
+  height: 35%;
   position: absolute;
-  top: 60px;
+  top: 30px;
   padding: ${(props) => props.theme.space[2]};
 `;

@@ -9,11 +9,13 @@ import {
 } from "../components/account.styles";
 import LottieView from "lottie-react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { FadeInView } from "../../../animations/fade.animation";
 
 export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
+
       <AnimationWrapper>
         <LottieView
           key="animation"
@@ -23,25 +25,27 @@ export const AccountScreen = ({ navigation }) => {
           source={require("../../../../assets/hamburger.json")}
         />
       </AnimationWrapper>
-      <Title> Munch Eats </Title>
-      <AccountContainer>
-        <AuthButton
-          icon="lock-open-outline"
-          mode="contained"
-          onPress={() => navigation.navigate("Login")}
-        >
-          Login
-        </AuthButton>
-        <Spacer size="large">
+      <FadeInView>
+        <Title style={{ paddingLeft: 16 }}> Munch Eats </Title>
+        <AccountContainer>
           <AuthButton
-            icon="email"
+            icon="lock-open-outline"
             mode="contained"
-            onPress={() => navigation.navigate("Register")}
+            onPress={() => navigation.navigate("Login")}
           >
-            Register
+            Login
           </AuthButton>
-        </Spacer>
-      </AccountContainer>
+          <Spacer size="large">
+            <AuthButton
+              icon="email"
+              mode="contained"
+              onPress={() => navigation.navigate("Register")}
+            >
+              Register
+            </AuthButton>
+          </Spacer>
+        </AccountContainer>
+      </FadeInView>
     </AccountBackground>
   );
 };
