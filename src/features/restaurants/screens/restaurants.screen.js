@@ -35,7 +35,7 @@ export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants, error } = useContext(RestaurantsContext);
   const { error: locationError } = useContext(LocationContext);
   const [isToggled, setIsToggled] = useState(false);
-
+  const hasError = !!error || !!locationError;
   const { favorites } = useContext(FavoritesContext);
   return (
     <SafeArea>
@@ -51,30 +51,35 @@ export const RestaurantsScreen = ({ navigation }) => {
       {isToggled && (
         <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />
       )}
-      {!!error ||
-        (!!locationError && (
-          <Text variant="error"> Something went wrong retrieving the data</Text>
-        ))}
-      <RestaurantList
-        data={restaurants}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("RestaurantDetail", { restaurant: item })
-              }
-            >
-              <Spacer position="bottom" size="large">
-                <FadeInView>
-                  <RestaurantInfoCard restaurant={item} />
-                </FadeInView>
-              </Spacer>
-            </TouchableOpacity>
-          );
-        }}
-        keyExtractor={(item) => item.name}
-        // contentContainerStyle={{ padding: 16 }}  padding 0 will put cards right next to the edges
-      />
+      {hasError && (
+        <Spacer position="left" size="large">
+          <Text variant="error">Something went wrong retrieving the data</Text>
+        </Spacer>
+      )}
+      {!hasError && (
+        <RestaurantList
+          data={restaurants}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("RestaurantDetail", {
+                    restaurant: item,
+                  })
+                }
+              >
+                <Spacer position="bottom" size="large">
+                  <FadeInView>
+                    <RestaurantInfoCard restaurant={item} />
+                  </FadeInView>
+                </Spacer>
+              </TouchableOpacity>
+            );
+          }}
+          keyExtractor={(item) => item.name}
+          // contentContainerStyle={{ padding: 16 }}  padding 0 will put cards right next to the edges
+        />
+      )}
     </SafeArea>
   );
 };
