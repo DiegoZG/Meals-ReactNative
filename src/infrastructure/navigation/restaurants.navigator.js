@@ -8,7 +8,7 @@ import { RestaurantsScreen } from "../../features/restaurants/screens/restaurant
 
 const RestaurantStack = createStackNavigator();
 
-export const RestaurantNavigator = () => {
+export const RestaurantsNavigator = () => {
   return (
     <RestaurantStack.Navigator
       headerMode="none"

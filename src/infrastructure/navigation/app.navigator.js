@@ -1,17 +1,16 @@
-import React, { useContext } from "react";
-
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
-import { MapScreen } from "../../features/map/screens/map.screen";
+import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SettingsNavigator } from "./settings.navigator";
-import { RestaurantNavigator } from "./restaurants.navigator";
+import { MapScreen } from "../../features/map/screens/map.screen";
 import { CheckoutScreen } from "../../features/checkout/screens/checkout.screen";
 
+import { CartContextProvider } from "../../services/cart/cart.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
-import { CartContextProvider } from "../../services/cart/cart.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +42,7 @@ export const AppNavigator = () => (
               inactiveTintColor: "gray",
             }}
           >
-            <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
+            <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Checkout" component={CheckoutScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
             <Tab.Screen name="Settings" component={SettingsNavigator} />

@@ -1,11 +1,13 @@
-import React, { createContext, useEffect, useState, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import { AuthenticationContext } from "../authentication/authentication.context";
-import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
   const { user } = useContext(AuthenticationContext);
+
   const [cart, setCart] = useState([]);
   const [restaurant, setRestaurant] = useState(null);
 
@@ -13,15 +15,18 @@ export const CartContextProvider = ({ children }) => {
     if (!restaurant || restaurant.placeId !== rst.placeId) {
       setRestaurant(rst);
       setCart([item]);
+    } else {
+      setCart([...cart, item]);
     }
-    setCart([...cart, item]);
   };
+
   const clear = () => {
     setCart([]);
     setRestaurant(null);
   };
+
   return (
-    <CartContextProvider
+    <CartContext.Provider
       value={{
         addToCart: add,
         clearCart: clear,
@@ -30,6 +35,6 @@ export const CartContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </CartContextProvider>
+    </CartContext.Provider>
   );
 };
