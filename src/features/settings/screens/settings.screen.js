@@ -26,7 +26,9 @@ const SettingsItem = styled(List.Item)`
 const TransparentSafeArea = styled(SafeArea)`
   background-color: transparent;
 `;
-
+const Email = styled(Text)`
+  background-color: rgba(255, 255, 255, 0.7);
+`;
 const AvatarContainer = styled.View`
   align-items: center;
 `;
@@ -63,7 +65,9 @@ export const SettingsScreen = ({ navigation }) => {
             )}
           </TouchableOpacity>
           <Spacer position="top" size="large">
-            <Text variant="label"> {user.email}</Text>
+            <Email>
+              <Text variant="label"> {user.email}</Text>
+            </Email>
           </Spacer>
         </AvatarContainer>
         <List.Section>
