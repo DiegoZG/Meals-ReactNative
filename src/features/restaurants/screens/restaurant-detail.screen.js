@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { ScrollView } from "react-native";
-import { List } from "react-native-paper";
+import { List, Divider } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -25,10 +25,14 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
           onPress={() => setBreakfastExpanded(!breakfastExpanded)}
         >
           <List.Item title="American Breakfast" />
+          <Divider />
           <List.Item title="Pancakes" />
+          <Divider />
           <List.Item title="French Toast" />
+          <Divider />
           <List.Item title="White eggs Fritatta" />
         </List.Accordion>
+        <Divider />
         <List.Accordion
           title="Lunch"
           left={(props) => <List.Icon {...props} icon="hamburger" />}
@@ -36,10 +40,14 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
           onPress={() => setLunchExpanded(!lunchExpanded)}
         >
           <List.Item title="Margharita Flatbread" />
+          <Divider />
           <List.Item title="King Burger" />
+          <Divider />
           <List.Item title="Sesame Chicken Chop Salad" />
+          <Divider />
           <List.Item title="Buffalo Wings" />
         </List.Accordion>
+        <Divider />
         <List.Accordion
           title="Dinner"
           left={(props) => <List.Icon {...props} icon="food-variant" />}
@@ -47,10 +55,14 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
           <List.Item title="Ribeye Steak w/rice and brocolini" />
+          <Divider />
           <List.Item title="Short Ribs" />
+          <Divider />
           <List.Item title="Salmon w/veggies" />
+          <Divider />
           <List.Item title="Chicken Riesling" />
         </List.Accordion>
+        <Divider />
         <List.Accordion
           title="Drinks"
           left={(props) => <List.Icon {...props} icon="cup" />}
@@ -58,12 +70,18 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >
           <List.Item title="Pisco Sour" />
+          <Divider />
           <List.Item title="Machu Picchu" />
+          <Divider />
           <List.Item title="Margarita" />
+          <Divider />
           <List.Item title="Mojito" />
+          <Divider />
           <List.Item title="Coke" />
+          <Divider />
           <List.Item title="Iced Tea" />
         </List.Accordion>
+        <Divider />
       </ScrollView>
       <Spacer position="bottom" size="large">
         <OrderButton
