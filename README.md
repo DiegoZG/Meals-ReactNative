@@ -3,7 +3,7 @@ Munch Eats is an application which lets users find restaurants nearby, see their
 It allows you search restaurants in their area or other states/countries, shows a marker in the map with the restaurants in the area and shows details
 of that specific restaurant like menu, if it's open, and if it is a hotel or restaurant.
 Munch eats includes features like online credit card payment, and this is possible using Stripe.
-Geolocation is used thanks to the Google API
+Geolocation is used thanks to the Google API.
 On Settings you will be able to take a photo to set it up in your profile and you will be able to see your favorite restaurants as well.
 
 ## Loggin In
