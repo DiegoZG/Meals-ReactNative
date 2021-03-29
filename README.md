@@ -10,7 +10,7 @@ On Settings you will be able to take a photo to set it up in your profile and yo
 When you first access the application, you will be prompted to login with email and password. This is done securely and externally via Firebase Authentication. Once you are logged in, you will be greeted with the dashboard page and 
 a list of restaurants around you.
 
-## Seeing Menu items
+## View Menu items
 Once in the main screen where a list of all the restaurants are being rendered, you can tap on any of the restaurant cards to be able to see all the detailed information about that specific Restaurant. 
 
 ## Making Payments
