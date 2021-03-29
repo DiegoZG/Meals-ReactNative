@@ -16,6 +16,6 @@ Once in the main screen where a list of all the restaurants are being rendered, 
 ## Making Payments
 To access the purchase screen, you need to click the blue "Pay" button in restaurant screen. To "purchase" the daily special for testing/usage of the application, insert "4242 4242 4242 4242" as the credit card number, along with any valid expiry date and security number. Once you click "Pay", you should be redirected to the Restaurant Detail Screen.
 
-## Taking a Profile Photo
+## Taking a Profile Picture
 Once you tab on the setting button on the navigation bar you will be prompted with an avatar, once you tab on the avatar your phone front facing camera will activate and once you tab on the screen you will see your Profile photo all set up on the settings screen instead of the default avatar.
 
